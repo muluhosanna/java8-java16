@@ -16,9 +16,15 @@ public class LambdaExpression {
     String outerfeild  ="outerField";
     static String staticOuterField = "static outer field";
     int age;
+    public int x =0;
 
     public class Inner{
-        public void innerMethod(){
+        int x=1;// when ever we want to call x=0 we have to use LambdaExpression.this.x this is because of shadowing
+        public void innerMethod(int x){
+            System.out.println("x="+x);// the method variable
+            System.out.println("this.x="+ this.x);// this is the inner class variable.
+            System.out.println("LambdaExpression.this.x=" +LambdaExpression.this.x);// calling the outer class member
+
             System.out.println("nmae and gender"+name + gender);
             System.out.println(outerfeild);
             System.out.println(staticOuterField);
@@ -36,17 +42,31 @@ public class LambdaExpression {
 
 
         }
-
-
-
+    }
+        interface IntegerMath{//the integerMath interface
+            int operation(int a,int b);//iterface method that takes integer values.
+        }
+        public int operationBinary(int a,int b,IntegerMath op){//the method operation binary takes two integer and
+        //the integer math operation
+            return op.operation(a,b);// this show s it is return type
+    }
+    interface StringStuff {// this is interface StringStuff
+        String update(String value);// the interface method
+    }
+    void someMethod() {// this is the class method
+        StringStuff excite = (happy) -> happy + "!";//this lambda expression
+        StringStuff question = (what) -> what + "?";// lambda expression
+        someFormat("Java is cool", excite);// this is the argument that takes the lambda expression and string
+        someFormat("Java is cool", question);//this is an argument that takes the lambda expression and string
+    }
+    void  someFormat(String val, StringStuff format) {// the class method that takes string val and the interface format.
+        String end = format.update(val);//when we call some method it calls some method and returns java is cool and
+        // java is cool?
+        System.out.println(end);
     }
 
 
-
-
-
-
-    }
+}
 
 
 
