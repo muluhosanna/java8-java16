@@ -30,7 +30,7 @@ public class LambdaExpression {
         void accessMembers() {
             //compiler error can not make a static reference to the non -static
             //System.out.println();
-            // Systemy.out.println()
+            //Systemy.out.println()
             System.out.println(staticOuterField);
             System.out.println(staticOuterField);
 
