@@ -39,6 +39,7 @@ public class LambdaExpression {
             //Systemy.out.println()
             System.out.println(staticOuterField);
             System.out.println(staticOuterField);
+            System.out.println();
 
 
         }
