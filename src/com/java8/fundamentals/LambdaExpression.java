@@ -1,14 +1,14 @@
 package com.java8.fundamentals;
-/*
-* under this section we will see the nested class
-* if the nested class is inner it can has access to the the members of the outte class.
-* to instantiate the inner class first we have to instantiate the outer class .
+/*Under this section we will see different cases about anonymous class and lambda expression.
+* We will see the nested class
+* If the nested class is inner it can have access to the members of the outer class.
+* To instantiate the inner class first we have to instantiate the outer class .
 * then , create the inner object with in the outer object the syntax
-* outerclass outerobject new outer class()
-* outer class.inner class innerObject = outerObject.new InnerClass()
-* to access the members of the static nested class fir ehave to instanciated the staticnested class
+* outerclass outerobject =new outer class()
+* Outer class.Inner class innerObject = outerObject.new InnerClass()
+* To access the members of the static nested class have to instantiated the static nested class
 * this can be done the outer class.inner class name = new outer class.inner cass
-* then to access the members name.membes
+* then to access the members name.members
  */
 public class LambdaExpression {
     private String name;
@@ -40,12 +40,10 @@ public class LambdaExpression {
             System.out.println(staticOuterField);
             System.out.println(staticOuterField);
             System.out.println();
-
-
         }
     }
         interface IntegerMath{//the integerMath interface
-            int operation(int a,int b);//iterface method that takes integer values.
+            int operation(int a,int b);//interface method that takes integer values.
         }
         public int operationBinary(int a,int b,IntegerMath op){//the method operation binary takes two integer and
         //the integer math operation
@@ -65,6 +63,23 @@ public class LambdaExpression {
         // java is cool?
         System.out.println(end);
     }
+    interface PythagoreanTheorem{// This is an interface about py
+        double hypotenus(double a,double b);
+    }
+    public double calculation(double a,double b,PythagoreanTheorem cal){
+        return cal.hypotenus(a,b);
+    }
+    interface Calculation2{
+        double conversion(double number);
+    }
+    public double feetToInch(double a,Calculation2 feet) {
+        return feet.conversion(a);
+
+    }
+    public double inchToFeet(double b,Calculation2 inch){
+        return inch.conversion(b);
+    }
+
 
 
 }
