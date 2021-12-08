@@ -82,8 +82,8 @@ public class Module2_1Exercise {
        // System.out.println();
         Date d = new Date(x);//creating the date object
        // System.out.println(ut2);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("E MMM dd,yyyy");//show day time format paterns
-       String strDate= dateFormat.format(d);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("E MMM dd,yyyy");//show day time format patterns
+       String strDate= dateFormat.format(d);//use the simple date format.
         System.out.println(strDate);
 
     }
