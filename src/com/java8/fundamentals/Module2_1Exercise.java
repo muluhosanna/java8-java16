@@ -11,10 +11,10 @@ public class Module2_1Exercise {
      */
     public static void main(String[] args){
        // moreOnComicBook();
-      // moreOnMarble1();
+      //moreOnMarble1();
         //moreOnDc1();
         //currentTime();
-       current2(1118829912l);
+    //   current2(1118829912l);
 
     }
     public static void  moreOnComicBook(){
@@ -41,9 +41,9 @@ public class Module2_1Exercise {
 
 
 
-        // ComicBook comic2 =(ComicBook) marble1;//upcasting
+        ComicBook comic2 =(ComicBook) marble1;//upcasting
        // MarbleComic marbleComic = (MarbleComic)
-        //System.out.println(comic2.getSerialNumber());
+        System.out.println(comic2.getSerialNumber());
        // System.out.println(comic2.getSerialNumber());
        // System.out.println(comic2.getSerialNumber());
 
