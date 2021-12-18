@@ -11,7 +11,7 @@ public class StudentRoster {
     private String studentId;
     private double balance;
     private double price;
-   // private String courses;
+    // private String courses;
     //we will copy here
     private String math = "Math101";
     private final int mathCredit = 4;
@@ -51,8 +51,7 @@ public class StudentRoster {
 
     public StudentRoster() {
         this.course = course;
-        this.balance=balance;
-
+        this.balance = balance;
         scanner = new Scanner(System.in);
         System.out.print("enter first name:");
         this.firstName = scanner.next();
@@ -64,24 +63,27 @@ public class StudentRoster {
         this.semister = scanner.next();
         this.course = course;
         this.payment = payment;
-        this.gpa=gpa;
+        this.gpa = gpa;
         setStudentId();
 
         System.out.println(firstName + " " + lastName + " " + gradeLevel + "" + " " + studentId);
-
-
         System.out.println("here are the courses you have taken ");
         System.out.println("math-Math101" + "\ncomp-Comp101" + "\nchem-Chem101" + "\neng-English101");
-        //Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter math grade");
-        this.mathGrade = scanner.next().charAt(0);
-        System.out.println("enter chem grade");
-        this.chemGrade = scanner.next().charAt(0);
-        System.out.println("enter comp grade here");
-        this.CompGrade = scanner.next().charAt(0);
-        System.out.println("enter english grade here");
-        this.engGrade = scanner.next().charAt(0);
-        calculateGpa();
+       /*we have to create data base for the grade and the courses
+       *create one function that calculates GPa
+       * get the courses and the copresponding grade and credit hour
+       *
+        */
+
+
+        int mathValue = mathMethod();
+        int compValue=compMethod();
+        int chemValue=chemMethod();
+        int engValue= engMethod();
+
+
+
+        calculateGpa(mathValue,chemValue,compValue,engValue);
         checkstatus();
         registration();
 
@@ -105,11 +107,6 @@ public class StudentRoster {
         this.marks = marks;
     }
 
-
-    // public String getCourse () {
-    //return "math101";
-    //   }
-
     public double getMarks() {
         return marks;
     }
@@ -117,43 +114,35 @@ public class StudentRoster {
     // public int getCourseCredit () {return 4;}
     public void registration() {
 
-
-        System.out.println("These are the the courses you will taking it");
+        System.out.println("These are the the courses you will be taking it");
         System.out.println("math2-Math201" + "\ncomp2 -Comp201" + "\nchem2 -Chem201" + "\neco-Economics201");
         System.out.println("Enter courses");
+
         for (int i = 1; i < 5; i++) {
-            this.course=scanner.next();
+            this.course = scanner.next();
             this.payment = payment + getCostPercorse();
             System.out.println(payment);
-
 
         }
 
         decision();
-
-        //calculateGpa();
-       // checkstatus();
-       // makePyment();
         currentDate();
         makePyment();
-
-
-        //calculateComulativeGpa();
-
-
     }
-    public void decision(){
+
+    public void decision() {
         System.out.println("Do you want to proceed?");
-        System.out.println("yes"+ "\nno");
-        String response=scanner.next();
-        switch (response.toLowerCase()){
-            case "yes"->System.out.println("make your payment");
-            case "no"->System.out.println("try another time");
+        System.out.println("yes" + "\nno");
+        String response = scanner.next();
+        switch (response.toLowerCase()) {
+            case "yes" -> System.out.println("make your payment");
+            case "no" -> System.out.println("try another time");
 
         }
     }
 
-    private Double getCostPercorse() {return costPercorse;
+    private Double getCostPercorse() {
+        return costPercorse;
     }
 
     public void currentDate() {
@@ -166,29 +155,14 @@ public class StudentRoster {
 
     private void makePyment() {
         /*get every course credit  hour and multiply cost per credit hour
-        *getMathcredit*100 +
-        * cost per credit=100
-        *
-        */
-        balance=balance+payment;}
+         *getMathcredit*100 +
+         * cost per credit=100
+         *
+         */
+        balance = balance + payment;
+    }
 
 
-    /* private void calculateComulativeGpa() {
-         Scanner scanner = new Scanner(System.in);
-
-         while (numberOfCourses<3){
-             System.out.println("enter courses here");
-
-             scanner.next();
-             numberOfCourses++;
-             payment=payment+costPercorse;
-
-         }
-
-
-     }
-     */
-    //here is the code
     public char getChemGrade() {
         return chemGrade;
     }
@@ -279,72 +253,146 @@ public class StudentRoster {
     }
 
     public int mathMethod() {
-        if (this.mathGrade == 'A') {
-            return 4;
-        } else if (this.mathGrade == 'B') {
-            return 3;
-        } else if (this.mathGrade == 'C') {
-            return 2;
-        } else if (this.mathGrade == 'D') {
-            return 1;
+        System.out.println("Enter math grade");
+        this.mathGrade = scanner.next().charAt(0);
+        int value = 0;
+        //System.out.println(mathGrade);
+        switch (mathGrade) {
+            case 'A':
+            case 'a':
+                value = 4;
+                break;
+            case 'B':
+            case 'b':
+                value = 3;
+                break;
+            case 'C':
+            case'c':
+                value = 2;
+                break;
+            case 'D':
+            case 'd':
+                value = 1;
+                break;
+            case 'F':
+            case 'f':
 
-        } else if (this.mathGrade == 'F') {
-            return 0;
+                value = 0;
+                break;
+            default: System.out.println("it is in valid grade");
+                mathMethod();
+                break;
+
+
         }
-        return 0;
-
+        return value;
     }
 
     public int compMethod() {
-        if (this.CompGrade == 'A') {
-            return 4;
-        } else if (this.CompGrade == 'B') {
-            return 3;
-        } else if (this.CompGrade == 'C') {
-            return 2;
-        } else if (this.CompGrade == 'D') {
-            return 1;
-        } else if (this.CompGrade == 'F') {
-            return 0;
+        int value1 = 0;
+        System.out.println("enter comp grade here");
+        this.CompGrade = scanner.next().charAt(0);
+        switch (CompGrade) {
+            case 'A':
+            case 'a':
+                value1 = 4;
+                break;
+            case 'B':
+            case'b':
+                value1 = 3;
+                break;
+            case 'C':
+            case 'c':
+                value1 = 2;
+                break;
+            case 'D':
+            case 'd':
+                value1 = 1;
+                break;
+            case 'F':
+            case 'f':
+                value1 = 0;
+                break;
+           default: System.out.println("it is invalid grade");
+               compMethod();
+               break;
+
+
         }
-        return 5;
+        return value1;
+
     }
 
     public int chemMethod() {
-        if (this.chemGrade == 'A') {
-            return 4;
-        } else if (this.chemGrade == 'B') {
-            return 3;
-        } else if (this.chemGrade == 'C') {
-            return 2;
-        } else if (this.chemGrade == 'D') {
-            return 1;
-        } else if (this.chemGrade == 'F') {
-            return 0;
+        int value2 = 0;
+        System.out.println("enter chem grade");
+        this.chemGrade = scanner.next().charAt(0);
+
+        switch (chemGrade) {
+            case 'A':
+            case 'a':
+                value2 = 4;
+                break;
+            case 'B':
+            case'b':
+                value2 = 3;
+                break;
+            case 'C':
+            case'c':
+                value2 = 2;
+                break;
+            case 'D':
+            case'd':
+                value2 = 1;
+                break;
+            case 'F':
+            case'f':
+                value2 = 0;
+                break;
+            default: System.out.println("it is not valid grade");
+                chemMethod();
+                break;
+
         }
-        return 5;
+        return value2;
+
+
     }
 
     public int engMethod() {
-        if (this.engGrade == 'A') {
-            return 4;
-        } else if (this.engGrade == 'B') {
-            return 3;
-        } else if (this.engGrade == 'C') {
-            return 2;
-        } else if (this.engGrade == 'D') {
-            return 1;
-        } else if (this.engGrade == 'F') {
-            return 0;
+        int value3 = 0;
+        System.out.println("enter english grade here");
+        this.engGrade = scanner.next().charAt(0);
+        switch (engGrade) {
+            case 'A':
+                value3 = 4;
+                break;
+            case 'B':
+                value3 = 3;
+                break;
+            case 'C':
+                value3 = 2;
+                break;
+            case 'D':
+                value3 = 1;
+                break;
+            case 'F':
+                value3 = 0;
+                break;
+           default: System.out.println("it is invalid grade");
+               engMethod();
+               break;
+
         }
-        return 5;
+        return value3;
     }
 
-    public void calculateGpa() {
+    public void calculateGpa(int math,int comps,int chems,int engs) {
+
         double totalCredit = mathCredit + compCredit + chemCredit + engCredit;
-        this.gpa = (getMathCredit() * mathMethod() + getChemCredit() * chemMethod() + getCompCredit() * compMethod()
-                + getEngCredit() * engMethod()) / totalCredit;
-        System.out.println(totalCredit);
+        this.gpa = (getMathCredit() * math+ getChemCredit() * chems + getCompCredit() * comps
+                + getEngCredit() * engs) / totalCredit;
+        // System.out.println(totalCredit);
         System.out.println(gpa);
 
 
@@ -367,6 +415,14 @@ public class StudentRoster {
             System.out.println("Failed");
             System.out.println("your are not allowed to take the next courses");
         }
+
+    }
+
+    public String toString() {
+        return getClass().getSimpleName() + "\n" + firstName + " " + lastName + " " + gradeLevel + "" + " " + studentId +
+                "\n" + this.math2 + "\n" + this.comp2 + "\n" + this.chem2 + "\n" + this.eco +
+                "\n" + "total payment=" + " " + this.payment;
+
 
     }
 

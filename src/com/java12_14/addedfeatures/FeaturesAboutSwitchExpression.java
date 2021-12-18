@@ -2,6 +2,8 @@ package com.java12_14.addedfeatures;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.java15_16.addedfeatures.Nurse;
+import com.java15_16.addedfeatures.NurseDemo;
 
 public class FeaturesAboutSwitchExpression {
     private static DaysOfTheweek day;
@@ -19,11 +21,30 @@ public class FeaturesAboutSwitchExpression {
         // document();
        // instanceOfTest();
        // testOnRecord();
-        //testOnroster();
+       // testOnroster();
 
-        // examplesOnRoster();
+        examplesOnRoster();
         // switchaAlternative("Monday");
         //  System.out.println(switchAlternative2(DaysOfTheweek.FRIDAY));
+       // examplesOnNurse();
+       // examplesOnNurseDemo();
+
+    }
+    public static void examplesOnNurseDemo(){
+        NurseDemo nurseDemo = new NurseDemo("samir","kenesa",234,67,35000);
+        NurseDemo nurseDemo1 = new NurseDemo("kamil","wagaw",890,34,27000);
+        System.out.println(nurseDemo.toString());
+        System.out.println(nurseDemo.hashCode());
+        System.out.println(nurseDemo.equals(nurseDemo1));
+        System.out.println(nurseDemo.fName() +" " +nurseDemo.lName());
+    }
+    public static void examplesOnNurse(){
+        Nurse nurses =new Nurse("mulu","tsegaw",123,34,28000.0);
+        Nurse nurse1 =new Nurse("kebede","chanie",345,45,26000);
+        System.out.println(nurses.toString());
+        System.out.println(nurses.hashCode());
+        System.out.println(nurses.getfName().equals(nurse1.getfName()));
+
     }
     public static void testOnroster(){
         StudentRoster roster = new StudentRoster();
@@ -45,7 +66,9 @@ public class FeaturesAboutSwitchExpression {
     }
 
     public static void examplesOnRoster() {
-        StudentRoster stdentRos = new StudentRoster();
+        StudentRoster studentRos = new StudentRoster();
+        System.out.println(studentRos.toString());
+        System.out.println(studentRos.mathMethod());
 
     }
 
