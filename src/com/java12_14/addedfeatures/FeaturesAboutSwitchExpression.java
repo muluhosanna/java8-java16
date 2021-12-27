@@ -23,7 +23,7 @@ public class FeaturesAboutSwitchExpression {
        // testOnRecord();
        // testOnroster();
 
-        examplesOnRoster();
+       // examplesOnRoster();
         // switchaAlternative("Monday");
         //  System.out.println(switchAlternative2(DaysOfTheweek.FRIDAY));
        // examplesOnNurse();

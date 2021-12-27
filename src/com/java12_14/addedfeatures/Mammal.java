@@ -8,6 +8,6 @@ public class Mammal extends Animal{
         System.out.println("eat grass and meat");
     }
     public void bread(){
-        System.out.println("breeds through borining");
+        System.out.println("breeds through in born");
     }
 }
