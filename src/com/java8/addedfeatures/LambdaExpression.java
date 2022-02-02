@@ -63,7 +63,7 @@ public class LambdaExpression {
         // java is cool?
         System.out.println(end);
     }
-    interface PythagoreanTheorem{// This is an interface about py
+    interface PythagoreanTheorem{// This is an interface about pythagorean Theorem
         double hypotenus(double a,double b);
     }
     public double calculation(double a,double b,PythagoreanTheorem cal){

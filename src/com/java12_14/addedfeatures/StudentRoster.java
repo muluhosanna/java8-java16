@@ -69,21 +69,19 @@ public class StudentRoster {
         System.out.println(firstName + " " + lastName + " " + gradeLevel + "" + " " + studentId);
         System.out.println("here are the courses you have taken ");
         System.out.println("math-Math101" + "\ncomp-Comp101" + "\nchem-Chem101" + "\neng-English101");
-       /*we have to create data base for the grade and the courses
-       *create one function that calculates GPa
-       * get the courses and the copresponding grade and credit hour
-       *
-        */
-
+        /*we have to create data base for the grade and the courses
+         *create one function that calculates GPa
+         * get the courses and the copresponding grade and credit hour
+         *
+         */
 
         int mathValue = mathMethod();
-        int compValue=compMethod();
-        int chemValue=chemMethod();
-        int engValue= engMethod();
+        int compValue = compMethod();
+        int chemValue = chemMethod();
+        int engValue = engMethod();
 
 
-
-        calculateGpa(mathValue,chemValue,compValue,engValue);
+        calculateGpa(mathValue, chemValue, compValue, engValue);
         checkstatus();
         registration();
 
@@ -267,7 +265,7 @@ public class StudentRoster {
                 value = 3;
                 break;
             case 'C':
-            case'c':
+            case 'c':
                 value = 2;
                 break;
             case 'D':
@@ -279,7 +277,8 @@ public class StudentRoster {
 
                 value = 0;
                 break;
-            default: System.out.println("it is in valid grade");
+            default:
+                System.out.println("it is in valid grade");
                 mathMethod();
                 break;
 
@@ -298,7 +297,7 @@ public class StudentRoster {
                 value1 = 4;
                 break;
             case 'B':
-            case'b':
+            case 'b':
                 value1 = 3;
                 break;
             case 'C':
@@ -313,9 +312,10 @@ public class StudentRoster {
             case 'f':
                 value1 = 0;
                 break;
-           default: System.out.println("it is invalid grade");
-               compMethod();
-               break;
+            default:
+                System.out.println("it is invalid grade");
+                compMethod();
+                break;
 
 
         }
@@ -334,22 +334,23 @@ public class StudentRoster {
                 value2 = 4;
                 break;
             case 'B':
-            case'b':
+            case 'b':
                 value2 = 3;
                 break;
             case 'C':
-            case'c':
+            case 'c':
                 value2 = 2;
                 break;
             case 'D':
-            case'd':
+            case 'd':
                 value2 = 1;
                 break;
             case 'F':
-            case'f':
+            case 'f':
                 value2 = 0;
                 break;
-            default: System.out.println("it is not valid grade");
+            default:
+                System.out.println("it is not valid grade");
                 chemMethod();
                 break;
 
@@ -379,18 +380,19 @@ public class StudentRoster {
             case 'F':
                 value3 = 0;
                 break;
-           default: System.out.println("it is invalid grade");
-               engMethod();
-               break;
+            default:
+                System.out.println("it is invalid grade");
+                engMethod();
+                break;
 
         }
         return value3;
     }
 
-    public void calculateGpa(int math,int comps,int chems,int engs) {
+    public void calculateGpa(int math, int comps, int chems, int engs) {
 
         double totalCredit = mathCredit + compCredit + chemCredit + engCredit;
-        this.gpa = (getMathCredit() * math+ getChemCredit() * chems + getCompCredit() * comps
+        this.gpa = (getMathCredit() * math + getChemCredit() * chems + getCompCredit() * comps
                 + getEngCredit() * engs) / totalCredit;
         // System.out.println(totalCredit);
         System.out.println(gpa);

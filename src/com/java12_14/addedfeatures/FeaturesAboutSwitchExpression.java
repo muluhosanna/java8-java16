@@ -19,11 +19,11 @@ public class FeaturesAboutSwitchExpression {
         // System.out.println(checkMonth("August"));
         // yielding("red");
         // document();
-       // instanceOfTest();
+       instanceOfTest();
        // testOnRecord();
        // testOnroster();
 
-       // examplesOnRoster();
+      // examplesOnRoster();
         // switchaAlternative("Monday");
         //  System.out.println(switchAlternative2(DaysOfTheweek.FRIDAY));
        // examplesOnNurse();
