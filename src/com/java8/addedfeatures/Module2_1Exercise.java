@@ -16,18 +16,34 @@ public class Module2_1Exercise {
         //currentTime();
         //   current2(1118829912l);
        // examplesOnWrapper();
-       // examplesOnRectangle();
+      // examplesOnRectangle();
         examplesOnGeneric();
 
+
+
     }
-    public static void examplesOnGeneric(){
+    public static void examplesOnGeneric() throws UnsupportedEncodingException {
         Mylist sampleList = new Mylist();
-        sampleList.testGeneric();
+        //sampleList.testGeneric();
+       // sampleList.listOdd();
+       // System.out.println(sampleList.listOdd());
+        //sampleList.testUnicode();
+      //  sampleList.threeArray();
+        //sampleList.array2();
+        //sampleList.arraywrapping();
+        //sampleList.testArray();
+        //sampleList.stringTest();
+        sampleList.removeDup("aaaaaaa");
+        System.out.println(sampleList.removeDup("aaaaaa"));
+        System.out.println(sampleList.removeDup("abababab"));
+        System.out.println(sampleList.removeDup("abcd"));
+
 
     }
     public static void examplesOnRectangle(){
         Rectangle rectangle = new Rectangle(4,6);
         rectangle.mapFunction();
+
     }
 
     public static void examplesOnWrapper() throws IOException {
