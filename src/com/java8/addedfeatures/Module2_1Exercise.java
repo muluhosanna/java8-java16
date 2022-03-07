@@ -15,20 +15,21 @@ public class Module2_1Exercise {
         //moreOnDc1();
         //currentTime();
         //   current2(1118829912l);
-       // examplesOnWrapper();
-      // examplesOnRectangle();
-        examplesOnGeneric();
-
+        examplesOnWrapper();
+        // examplesOnRectangle();
+        // examplesOnGeneric();
+       // testifElse();
 
 
     }
+
     public static void examplesOnGeneric() throws UnsupportedEncodingException {
         Mylist sampleList = new Mylist();
         //sampleList.testGeneric();
-       // sampleList.listOdd();
-       // System.out.println(sampleList.listOdd());
+        // sampleList.listOdd();
+        // System.out.println(sampleList.listOdd());
         //sampleList.testUnicode();
-      //  sampleList.threeArray();
+        //  sampleList.threeArray();
         //sampleList.array2();
         //sampleList.arraywrapping();
         //sampleList.testArray();
@@ -40,8 +41,9 @@ public class Module2_1Exercise {
 
 
     }
-    public static void examplesOnRectangle(){
-        Rectangle rectangle = new Rectangle(4,6);
+
+    public static void examplesOnRectangle() {
+        Rectangle rectangle = new Rectangle(4, 6);
         rectangle.mapFunction();
 
     }
@@ -52,16 +54,19 @@ public class Module2_1Exercise {
         //demoWrapper.testWrapper();
         //demoWrapper.arraymath();
         //System.out.println(demoWrapper);
-       // JavaWrapperDemo javaWrapperDemo1 = new JavaWrapperDemo("mulu", "tekeste", 800, 45);
-       // System.out.println(demoWrapper == javaWrapperDemo1);
-       // System.out.println(demoWrapper.equals(demoWrapper));
-       // System.out.println(demoWrapper == demoWrapper);
-       // JavaWrapperDemo.getCount();
-       // System.out.println(JavaWrapperDemo.getCount());
-       // demoWrapper.arrayTostring();
-       // demoWrapper.testCross();
+        // JavaWrapperDemo javaWrapperDemo1 = new JavaWrapperDemo("mulu", "tekeste", 800, 45);
+        // System.out.println(demoWrapper == javaWrapperDemo1);
+        // System.out.println(demoWrapper.equals(demoWrapper));
+        // System.out.println(demoWrapper == demoWrapper);
+        // JavaWrapperDemo.getCount();
+        // System.out.println(JavaWrapperDemo.getCount());
+        // demoWrapper.arrayTostring();
+        // demoWrapper.testCross();
 
-     //   demoWrapper.arraymath();
+        //   demoWrapper.arraymath();
+        //demoWrapper.isAnagramSort("hello","Hello");
+        //demoWrapper.testSubstring();
+        demoWrapper.testArraylist();
 
 
     }
@@ -97,8 +102,9 @@ public class Module2_1Exercise {
 
 
     }
+
     public static void examplesOnSerialization() throws IOException, ClassNotFoundException {
-        Rectangle rectangle1 = new Rectangle(5,8);
+        Rectangle rectangle1 = new Rectangle(5, 8);
         rectangle1.testSerial();
     }
 
@@ -142,5 +148,29 @@ public class Module2_1Exercise {
 
     }
 
+    public static void testifElse() {
+        String s = "brave";
+        String reverse = "";
+        for (int i = s.length() - 1; i >= 0; i--) {
 
+            reverse += s.charAt(i);
+
+
+        }
+        //System.out.println(reverse);
+        boolean palendrom = true;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != reverse.charAt(i)) {
+                palendrom = false;
+            }
+
+
+        }
+        if (palendrom) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+    }
 }
+

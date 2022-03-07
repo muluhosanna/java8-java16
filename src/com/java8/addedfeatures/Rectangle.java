@@ -58,6 +58,8 @@ public class Rectangle implements Serializable {
         treeSet.add(45);
         System.out.println(treeSet.lower(25));
         System.out.println(treeSet.lower(5));
+        System.out.println(10+20+"java");
+        System.out.println("java" +10+20);
 
     }
 }

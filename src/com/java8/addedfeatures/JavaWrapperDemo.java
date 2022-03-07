@@ -173,7 +173,7 @@ public class JavaWrapperDemo {
     }
 
     public void testCross() {
-        int[] sampleArray4 = {2,3,5,6,7};
+        int[] sampleArray4 = {2, 3, 5, 6, 7};
         System.out.println(sampleArray4.length);
         if (sampleArray4[0] > sampleArray4[2] && sampleArray4[1] < sampleArray4[3]) {
             System.out.println(true);
@@ -192,7 +192,65 @@ public class JavaWrapperDemo {
             System.out.println(false);
 
 
-
         }
+    }
+
+    public boolean isAnagramSort(String string1, String string2) {
+
+        if (string1.length() != string2.length()) {
+            return false;
+        }
+        char[] a1 = string1.toCharArray();
+        char[] a2 = string2.toCharArray();
+        Arrays.sort(a1);
+        Arrays.sort(a2);
+        return Arrays.equals(a1, a2);
+    }
+
+    public void testSubstring() {
+        String A = "hello";
+        String B = "java";
+        String s11 = "200";
+        int i1 = 100;
+        String stnum = String.valueOf(i1);
+        String strnum2 = Integer.toString(i1);
+        System.out.println(strnum2);
+        System.out.println(stnum);
+        Integer i = Integer.valueOf(s11);
+        int j = Integer.parseInt(s11);
+        System.out.println(j);
+        System.out.println(i);
+        System.out.println("after");
+        //String A=sc.next();
+        // String B=sc.next();
+        System.out.println(A.length() + B.length());
+        if (A.compareTo(B) == 1) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+        String s1 = A.substring(0, 1).toUpperCase();
+        String s2 = B.substring(0, 1).toUpperCase();
+        System.out.println(s1 + A.substring(1) + "" + s2 + B.substring(1));
+
+    }
+
+    public void testArraylist() {
+        List list = new ArrayList();
+        list.add(10);
+        list.add(50);
+        list.add(30);
+
+        Iterator i = list.iterator();
+        Iterator i2= list.iterator();
+
+        list.forEach(m->System.out.println(m));
+        while (i.hasNext()) {
+
+            System.out.println(i.next());
+        }
+        Collections.reverse(list);
+        System.out.println(list);
+
     }
 }
